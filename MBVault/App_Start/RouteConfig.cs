@@ -18,6 +18,18 @@ namespace MBVault
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Generate",
+                url: "{controller}/{action}/{generator}/{password}",
+                defaults: new
+                {
+                    controller = "Home",
+                    action = "Generate",
+                    generator = UrlParameter.Optional,
+                    password = UrlParameter.Optional
+                }
+            );
         }
     }
 }
